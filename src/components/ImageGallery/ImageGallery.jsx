@@ -1,13 +1,16 @@
-//external imports
+/*external imports*/
 import { string, func } from 'prop-types';
 import { useState, useEffect } from 'react';
 import { Notify } from 'notiflix';
-/**internal imports */
+/**
+internal imports 
+*/
 //utils
 import { getImages } from 'utils/api/get-images.js';
-// components
+// styled components
 import { Container } from '../Container/Container.jsx';
 import { Wrapper } from '../Wrapper/Wrapper.jsx'
+// components
 import { Loader } from '../Loader/Loader';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem.jsx';
 import { Button } from '../Button/Button';
@@ -25,7 +28,7 @@ const ImageGallery = (props) => {
     const [images, setImages] = useState([]);
     const [toTop, setToTop] = useState(false);
     const [status, setStatus] = useState('idle');
-
+    const [loading, setLoading] = useState(false);
     const handleLoadMore = () => {
         setPage(prev => prev + 1);
     };
@@ -41,6 +44,7 @@ const ImageGallery = (props) => {
     useEffect(() => {
         const getGallery = async () => {
             setStatus('pending');
+            setLoading(true);
             try {
                 const response = await getImages(query, page);
                 let imageData = response.data;
@@ -68,6 +72,7 @@ const ImageGallery = (props) => {
                     return;
                 }
                 if (imageCount < 12 && page === 1) {
+                    setLoading(false);
                     setImages(imageData.hits)
                     setStatus('resolved');
                     setToTop(false);
@@ -75,6 +80,7 @@ const ImageGallery = (props) => {
                     return;
                 }
                 if (imageCount < 12 && page > 1) {
+                    setLoading(false);
                     setImages(prev => [...prev, ...imageData.hits]);
                     setStatus('resolved');
                     setToTop(true);
@@ -95,6 +101,7 @@ const ImageGallery = (props) => {
                 if (imageTotal > 12) {
                     setStatus('more');
                     setToTop(true);
+                    setLoading(true);
                     Notify.success(`Hooray! We can view ${imageTotal} ${query} images in the Pixabay database.`);
                     return;
                 }
@@ -104,6 +111,7 @@ const ImageGallery = (props) => {
             }
             finally {
                 console.log('made get request');
+                setLoading(false);
             }
         };
         
@@ -128,7 +136,8 @@ const ImageGallery = (props) => {
                         openModal={openModal}
                     />
                 </ul>
-                <Loader />
+                
+                {loading && <Loader loading={loading} />}
             </Container>
             
         )

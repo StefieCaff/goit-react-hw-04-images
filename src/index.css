@@ -1,7 +1,22 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
 
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 html {
   box-sizing: border-box;
@@ -30,6 +45,11 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+a{
+  text-decoration: none;
+}
+
 .hidden{
   visibility: hidden;
   font-size: 0;
@@ -47,12 +67,12 @@ img {
  * Стили компонента App
  */
 
-/* .App {
-  display: grid;
+.App {
+  /* display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 16px;
+  grid-gap: 16px; */
   padding-bottom: 24px;
-} */
+} 
 
 /*
  * Стили компонента Searchbar
@@ -244,12 +264,3 @@ img {
     justify-content: center;
   }
 } */
-
-/* 
-*loader 
-*/
-.Center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}

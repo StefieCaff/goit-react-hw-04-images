@@ -1,16 +1,18 @@
-// import { InfinitySpin } from 'react-loader-spinner';
+import PuffLoader from "react-spinners/PuffLoader";
+import { StyledLoader } from "./styled-loader"; 
 
-const Loader = () => {
+const Loader = ({loading}) => {
   
     return (
-        <div className="Center">
-            {/* <InfinitySpin
-                width='250'
-                color="#3f51b5"
-            /> */}
-            <p>Loading</p>
-        </div>
-
+        <StyledLoader>
+            <PuffLoader
+                loading={loading}
+                size={80}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+                color= 'rgba(1, 198, 253)'
+            />
+        </StyledLoader>
     );
 };
 
