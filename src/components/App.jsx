@@ -1,15 +1,14 @@
-// //external imports
+/*external imports*/ 
  import {  useState } from "react";
  import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// //internal imports
+/*internal imports*/
+//components
+import { StyledHero } from "./Section/styled-section";
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
-import { StyledMessage } from "./Message/styled-message.js";
 import { Message } from "./Message/Message";
-import { StyledContainer } from "./Container/styled-container.js";
-import { StyledSection, StyledHero } from "./Section/styled-section.js";
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -42,17 +41,10 @@ export const App = () => {
       <StyledHero>
         <Searchbar onSubmit={handleSubmit} />
       </StyledHero>
-      
       <Message>
         <span><a href="https://pixabay.com/">Pixabay </a>API</span>
       </Message>
-      
-      <StyledSection>
-        <StyledContainer>
-          <ImageGallery query={query} openModal={handleOpenModal} />
-        </StyledContainer>
-      </StyledSection>
-
+      <ImageGallery query={query} openModal={handleOpenModal} />
       {openModal && (
         <Modal
           largeImageURL={largeImageURL}

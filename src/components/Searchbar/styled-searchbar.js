@@ -7,6 +7,7 @@ const StyledInput = styled.input`
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
+    overflow: hidden;
     background-color: transparent;
     color: var(primary-color);
     border: 3px solid var(--primary-accent);

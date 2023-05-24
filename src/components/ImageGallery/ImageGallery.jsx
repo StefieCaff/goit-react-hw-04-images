@@ -8,8 +8,11 @@ internal imports
 //utils
 import { getImages } from 'utils/api/get-images.js';
 // styled components
-import { Container } from '../Container/Container.jsx';
+import { StyledSection } from 'components/Section/styled-section.js';
+import { StyledContainer } from '../Container/styled-container.js';
+import { StyledList } from 'components/ImageGallery/styled-image-gallery.js';
 import { Wrapper } from '../Wrapper/Wrapper.jsx'
+
 // components
 import { Loader } from '../Loader/Loader';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem.jsx';
@@ -128,51 +131,54 @@ const ImageGallery = (props) => {
     
     if (status === 'pending') {
         return (
-            <Container>
-                
-                <ul className="ImageGallery">
-                    <ImageGalleryItem
-                        data={images}
-                        openModal={openModal}
-                    />
-                </ul>
-                
-                {loading && <Loader loading={loading} />}
-            </Container>
-            
+            <StyledSection>
+                <StyledContainer>
+                    <StyledList className="ImageGallery">
+                        <ImageGalleryItem
+                            data={images}
+                            openModal={openModal}
+                        />
+                    </StyledList>
+                    {loading && <Loader loading={loading} />}
+                </StyledContainer>
+            </StyledSection>
         )
     }
     if (status === 'resolved') {
         return (
-            <Container>
-                <ul className="ImageGallery">
-                    <ImageGalleryItem
-                        data={images}
-                        openModal={openModal}
-                    />
-                </ul>
-                {toTop && <Button clickHandler={backToTop} text="To Top"/>}
-            </Container>
+            <StyledSection>
+                <StyledContainer>
+                    <StyledList className="ImageGallery">
+                        <ImageGalleryItem
+                            data={images}
+                            openModal={openModal}
+                        />
+                    </StyledList>
+                    {toTop && <Button clickHandler={backToTop} text="To Top"/>}
+                </StyledContainer>
+            </StyledSection>
         );
     }
     if (status === 'more') {
         return (
-            <Container>
-                <ul className="ImageGallery">
-                    <ImageGalleryItem
-                        data={images}
-                        openModal={openModal}
-                    />
-                </ul>
-                <Wrapper>
-                <Button clickHandler={handleLoadMore} text="Load More" /></Wrapper>
-                <Wrapper>{toTop && <Button clickHandler={backToTop} text="To Top"/>}</Wrapper>
-            </Container>
+            <StyledSection>
+                <StyledContainer>
+                    <StyledList className="ImageGallery">
+                        <ImageGalleryItem
+                            data={images}
+                            openModal={openModal}
+                        />
+                    </StyledList>
+                    <Wrapper>
+                        <Button clickHandler={handleLoadMore} text="Load More" />
+                    </Wrapper>
+                    <Wrapper>{toTop && <Button clickHandler={backToTop} text="To Top"/>}</Wrapper>
+                </StyledContainer>
+            </StyledSection>
         );
     }
     return null;
 };
-
 
 ImageGallery.propTypes = {
     query: string,

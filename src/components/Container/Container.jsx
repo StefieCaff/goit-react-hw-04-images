@@ -1,8 +1,9 @@
 import { node } from 'prop-types';
+import { StyledContainer } from './styled-container';
 
 const Container = ({ children }) => {
     return (
-        <div>{children}</div>
+        <StyledContainer>{children}</StyledContainer>
     )
 };
 
