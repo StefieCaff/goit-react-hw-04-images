@@ -1,6 +1,17 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
+/*vars*/
+:root {
+  --primary-color: #000;
+  --primary-accent: rgba(1, 198, 253, .7);
+  --primary-accent-opaque: rgba(1, 198, 253, .3);
+
+  --secondary-color: #fff;
+
+  --primary-border-radius: 5px;
+}
+
 h1,
 h2,
 h3,

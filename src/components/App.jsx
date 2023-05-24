@@ -6,7 +6,8 @@
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
-
+import { StyledMessage } from "./Message/styled-message.js";
+import { Message } from "./Message/Message";
 import { StyledContainer } from "./Container/styled-container.js";
 import { StyledSection, StyledHero } from "./Section/styled-section.js";
 
@@ -41,7 +42,11 @@ export const App = () => {
       <StyledHero>
         <Searchbar onSubmit={handleSubmit} />
       </StyledHero>
-      <StyledSection><StyledContainer><p>Use the search field to access up to five hundred royalty free images from the <a href="https://pixabay.com/">Pixabay</a> API.</p></StyledContainer></StyledSection>
+      
+      <Message>
+        <span><a href="https://pixabay.com/">Pixabay </a>API</span>
+      </Message>
+      
       <StyledSection>
         <StyledContainer>
           <ImageGallery query={query} openModal={handleOpenModal} />
