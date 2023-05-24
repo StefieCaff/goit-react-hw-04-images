@@ -3,7 +3,7 @@ import Magnify from 'images/search.png';
 
 
 const StyledInput = styled.input`
-    padding: 12px 75px 13px 15px;
+    padding: 15px 75px 14px 15px;
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
@@ -11,9 +11,12 @@ const StyledInput = styled.input`
     color: var(primary-color);
     border: 3px solid var(--primary-accent);
     border-radius: var(--primary-border-radius);
-    transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-property: background-color, color; 
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
     &:hover {
         background-color: var(--primary-accent-opaque);
+        color: var(--secondary-color);
     }
     &:focus {
         color: var(--secondary-color);
@@ -29,22 +32,25 @@ const StyledForm = styled.form`
     }
     button {
         position: absolute;
-        right: 6px;
-        top: 6px;
+        right: 7px;
+        top: 7px;
         background-image: url(${Magnify});
         background-size: 60%;
         background-repeat: no-repeat;
         background-position: center;
         background-color: var(--primary-accent);
-        border: 0;
+        border: 1px solid transparent;
         border-radius: var(--primary-border-radius);
         padding: 20px;
-        transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition-property: background-color, border; 
+        transition-duration: 400ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         outline: none;
     &:hover,
     &:focus {
-        background-color: var(--primary-accent);
+        background-color: var(--primary-accent-opaque);
+        border: 1px solid var(--primary-accent);
 
     }
 //    box-shadow: -10px -10px 2px -1px rgba(108,0,85,.5),

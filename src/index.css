@@ -4,7 +4,7 @@
 /*vars*/
 :root {
   --primary-color: #000;
-  --primary-accent: rgba(1, 198, 253, .7);
+  --primary-accent: rgba(1, 198, 253, .8);
   --primary-accent-opaque: rgba(1, 198, 253, .3);
 
   --secondary-color: #fff;

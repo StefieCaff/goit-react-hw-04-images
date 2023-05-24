@@ -12,8 +12,9 @@ const StyledMessage = styled.div`
         display: inline;
         color: var(--primary-accent);
         background-color: none;
-        transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1);
-        transition: color 400ms cubic-bezier(0.4, 0, 0.2, 1);  
+        transition-property: background-color, color; 
+        transition-duration: 400ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
     &:hover,
     &:focus {
         background-color: var(--primary-accent);
