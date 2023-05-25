@@ -48,20 +48,13 @@ const StyledForm = styled.form`
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         outline: none;
-    &:hover,
-    &:focus {
-        background-color: var(--primary-accent-opaque);
-        border: 1px solid var(--primary-accent);
-
+            &:hover,
+            &:focus {
+                background-color: var(--primary-accent-opaque);
+                border: 1px solid var(--primary-accent);
+            }
     }
-//    box-shadow: -10px -10px 2px -1px rgba(108,0,85,.5),
-//               -10px 10px 2px -1px var(--primary-accent-opaque),
-//               10px -10px 2px -1px rgba(253,1,108,.3),
-//               10px 10px 2px -1px rgba(199,253,1,.3);
-    }
-   
-
-`
+`;
 
 export {
     StyledForm,

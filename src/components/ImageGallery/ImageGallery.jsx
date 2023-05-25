@@ -170,9 +170,11 @@ const ImageGallery = (props) => {
                         />
                     </StyledList>
                     <Wrapper>
-                        <Button clickHandler={handleLoadMore} text="Load More" />
+                        <Button clickHandler={handleLoadMore} text="More Images" />
                     </Wrapper>
-                    <Wrapper>{toTop && <Button clickHandler={backToTop} text="To Top"/>}</Wrapper>
+                    <Wrapper>
+                        {toTop && <Button clickHandler={backToTop} text="Top" />}
+                    </Wrapper>
                 </StyledContainer>
             </StyledSection>
         );

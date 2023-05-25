@@ -1,5 +1,7 @@
 import { string, func} from 'prop-types'
 
+import { StyledBUtton } from './styled-button';
+
 const Button = props => {
 
     const {
@@ -9,15 +11,15 @@ const Button = props => {
     } = props;
     
     return (
-        <div className="Center-buttons">
-            <button
-                className="Button"
-                type={type}
-                onClick={clickHandler}
-                aria-label={text}
-            >{text}
-            </button>
-        </div>
+        
+        <StyledBUtton
+            className="Button"
+            type={type}
+            onClick={clickHandler}
+            aria-label={text}
+        >{text}
+        </StyledBUtton>
+    
     )
 };
 
