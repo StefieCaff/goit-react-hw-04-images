@@ -1,19 +1,20 @@
 import PuffLoader from "react-spinners/PuffLoader";
-import { StyledLoader } from "./styled-loader"; 
 
-const Loader = ({loading}) => {
+const Loader = ({loading, className}) => {
   
     return (
-        <StyledLoader>
+        <div className={className}>
             <PuffLoader
                 loading={loading}
-                size={80}
+                size={100}
                 aria-label="Loading Spinner"
                 data-testid="loader"
                 color= 'rgba(1, 198, 253)'
             />
-        </StyledLoader>
+        </div>
     );
 };
+
+
 
 export {Loader}

@@ -13,7 +13,7 @@ import { StyledContainer } from '../Container/styled-container.js';
 import { Wrapper } from '../Wrapper/Wrapper.jsx'
 
 // components
-import { Loader } from '../Loader/Loader';
+import { StyledLoader } from 'components/Loader/styled-loader.js';
 import { Button } from 'components/Button/Button.jsx';
 import { StyledButton } from 'components/Button/styled-button.js';
 import { StyledImageCard } from 'components/ImageGalleryItem/styled-image-gallery-item.js';
@@ -140,7 +140,7 @@ const ImageGallery = (props) => {
                             openModal={openModal}
                         />
                     </StyledList>
-                    {loading && <Loader loading={loading} />}
+                    {loading && <StyledLoader loading={loading} />}
                 </StyledContainer>
             </StyledSection>
         )
