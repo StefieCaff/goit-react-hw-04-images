@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/goit-react-hw-04-images/static/css/main.ac021708.css",
-    "main.js": "/goit-react-hw-04-images/static/js/main.60d2836d.js",
+    "main.js": "/goit-react-hw-04-images/static/js/main.59809345.js",
     "static/media/pink-magic-d.jpg": "/goit-react-hw-04-images/static/media/pink-magic-d.d3f191ac8d13787d59c5.jpg",
     "static/media/pink-magic-b3.jpg": "/goit-react-hw-04-images/static/media/pink-magic-b3.7e62ef2edf147a7718fe.jpg",
     "index.html": "/goit-react-hw-04-images/index.html",
     "main.ac021708.css.map": "/goit-react-hw-04-images/static/css/main.ac021708.css.map",
-    "main.60d2836d.js.map": "/goit-react-hw-04-images/static/js/main.60d2836d.js.map"
+    "main.59809345.js.map": "/goit-react-hw-04-images/static/js/main.59809345.js.map"
   },
   "entrypoints": [
     "static/css/main.ac021708.css",
-    "static/js/main.60d2836d.js"
+    "static/js/main.59809345.js"
   ]
 }
