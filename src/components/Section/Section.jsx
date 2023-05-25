@@ -1,13 +1,14 @@
-import { node } from 'prop-types'
+import { node, string } from 'prop-types'
 
-const Section = ({ children }) => {
+const Section = ({ children, className }) => {
     return (
-        <section>{children}</section>
+        <section className={className}>{children}</section>
     );
 };
 
 Section.propTypes = {
-    children: node
+    children: node,
+    className: string
 };
 
 export { Section };

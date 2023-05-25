@@ -10,19 +10,19 @@ import { getImages } from 'utils/api/get-images.js';
 // styled components
 import { StyledSection } from 'components/Section/styled-section.js';
 import { StyledContainer } from '../Container/styled-container.js';
-import { StyledList } from 'components/ImageGallery/styled-image-gallery.js';
 import { Wrapper } from '../Wrapper/Wrapper.jsx'
 
 // components
 import { Loader } from '../Loader/Loader';
-import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem.jsx';
 import { Button } from 'components/Button/Button.jsx';
 import { StyledButton } from 'components/Button/styled-button.js';
+import { StyledImageCard } from 'components/ImageGalleryItem/styled-image-gallery-item.js';
+import { StyledList } from './styled-image-gallery.js';
 
 const ImageGallery = (props) => {
 
     const {
-        
+        className,
         openModal,
         query
     } = props;
@@ -133,8 +133,8 @@ const ImageGallery = (props) => {
         return (
             <StyledSection>
                 <StyledContainer>
-                    <StyledList className="ImageGallery">
-                        <ImageGalleryItem
+                    <StyledList className={className}>
+                        <StyledImageCard
                             data={images}
                             openModal={openModal}
                         />
@@ -148,8 +148,8 @@ const ImageGallery = (props) => {
         return (
             <StyledSection>
                 <StyledContainer>
-                    <StyledList className="ImageGallery">
-                        <ImageGalleryItem
+                    <StyledList className={className}>
+                        <StyledImageCard
                             data={images}
                             openModal={openModal}
                         />
@@ -163,8 +163,8 @@ const ImageGallery = (props) => {
         return (
             <StyledSection>
                 <StyledContainer>
-                    <StyledList className="ImageGallery">
-                        <ImageGalleryItem
+                    <StyledList className={className}>
+                        <StyledImageCard
                             data={images}
                             openModal={openModal}
                         />
@@ -183,6 +183,7 @@ const ImageGallery = (props) => {
 };
 
 ImageGallery.propTypes = {
+    className: string,
     query: string,
     openModal: func.isRequired,
 };

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const StyledImageCard = styled.li`
+import { ImageGalleryItem } from './ImageGalleryItem';
+
+const StyledImageCard = styled(ImageGalleryItem)`
     border-radius: 5px;
     flex-basis: calc((100% - 10px) / 1);
 
@@ -26,5 +28,5 @@ const StyledImageCard = styled.li`
             cursor: zoom-in;
         }
     }
-`
-export { StyledImageCard }
+`;
+export { StyledImageCard };

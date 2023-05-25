@@ -1,16 +1,15 @@
 import {string, func, number, PropTypes} from 'prop-types'
 
-import { StyledImageCard } from './styled-image-gallery-item';
-
 const ImageGalleryItem = (props) => {
 
     const {
+        className,
         data,
         openModal
     } = props;
 
     return data.map(({id, largeImageURL, tags, webformatURL}) => (
-        <StyledImageCard key={id}>
+        <li className={className} key={id}>
             <img className="ImageGalleryItem-image"
                 src={webformatURL}
                 alt={tags}
@@ -18,7 +17,7 @@ const ImageGalleryItem = (props) => {
                 onClick={() => openModal(largeImageURL)}
                 loading="lazy"
             />
-        </StyledImageCard>
+        </li>
 
     ));
 };
@@ -30,6 +29,7 @@ ImageGalleryItem.defaultProps = {
 }
 
 ImageGalleryItem.propTypes = {
+    className: string,
     data: PropTypes.arrayOf(
     PropTypes.shape({
       id: number.isRequired,

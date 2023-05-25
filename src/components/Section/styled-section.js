@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-import backgroundD from 'images/pink-magic-d.jpg';
 
-const StyledHero = styled.section`
+import backgroundD from 'images/pink-magic-d.jpg';
+import { Section } from './Section';
+
+const StyledHero = styled(Section)`
     width: 100vw;
     padding-top: 75px;
     padding-bottom: 50px;
@@ -15,7 +17,7 @@ const StyledHero = styled.section`
     justify-content: center;
 `
 
-const StyledSection = styled.section`
+const StyledSection = styled(Section)`
 {
   padding-top: 60px;
   padding-bottom: 60px;

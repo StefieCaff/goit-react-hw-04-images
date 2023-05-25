@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 const StyledList = styled.ul`
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +16,6 @@ const StyledList = styled.ul`
         margin: 30px 0px;
         gap: 20px; 
     }
-`
+`;
 
-export {StyledList}
+export { StyledList };
