@@ -8,7 +8,7 @@ import { StyledHero } from "./Section/styled-section";
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
-import { Message } from "./Message/Message";
+import { StyledMessage } from "./Message/styled-message";
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -41,9 +41,9 @@ export const App = () => {
       <StyledHero>
         <Searchbar onSubmit={handleSubmit} />
       </StyledHero>
-      <Message>
+      <StyledMessage>
         <span><a href="https://pixabay.com/">Pixabay </a>API</span>
-      </Message>
+      </StyledMessage>
       <ImageGallery query={query} openModal={handleOpenModal} />
       {openModal && (
         <Modal

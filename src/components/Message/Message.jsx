@@ -1,24 +1,23 @@
-import { node, string } from 'prop-types'
+import { node, string } from 'prop-types';
 
-import { StyledMessage } from './styled-message';
-
-const Message = ({ children, message }) => {
+const Message = ({ children, message, className }) => {
 
     return (
-        <StyledMessage>
+        <div className={className}>
             <span>{message}</span>
             <span>{children}</span>
-        </StyledMessage>
+        </div>
     );
 };
 
 Message.defaultProps = {
     message: 'Use the search field to access up to five hundred royalty free images from the '
-}
+};
 
 Message.propTypes = {
     children: node,
-    message: string
-}
+    message: string,
+    className: string
+};
 
 export { Message };
