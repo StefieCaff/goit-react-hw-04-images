@@ -1,14 +1,14 @@
-import { node } from 'prop-types';
-import { StyledContainer } from './styled-container';
+import { node, string } from 'prop-types';
 
-const Container = ({ children }) => {
+const Container = ({ children, className }) => {
     return (
-        <StyledContainer>{children}</StyledContainer>
+        <div className={className}>{children}</div>
     )
 };
 
 Container.propTopes = {
-    children: node.isRequired  
+    children: node.isRequired,
+    className: string
 };
 
 export { Container };
