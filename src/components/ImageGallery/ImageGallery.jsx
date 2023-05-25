@@ -32,6 +32,7 @@ const ImageGallery = (props) => {
     const [toTop, setToTop] = useState(false);
     const [status, setStatus] = useState('idle');
     const [loading, setLoading] = useState(false);
+
     const handleLoadMore = () => {
         setPage(prev => prev + 1);
     };
