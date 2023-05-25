@@ -16,8 +16,8 @@ import { Wrapper } from '../Wrapper/Wrapper.jsx'
 // components
 import { Loader } from '../Loader/Loader';
 import { ImageGalleryItem } from '../ImageGalleryItem/ImageGalleryItem.jsx';
-import { Button } from '../Button/Button';
-
+import { Button } from 'components/Button/Button.jsx';
+import { StyledButton } from 'components/Button/styled-button.js';
 
 const ImageGallery = (props) => {
 
@@ -170,7 +170,7 @@ const ImageGallery = (props) => {
                         />
                     </StyledList>
                     <Wrapper>
-                        <Button clickHandler={handleLoadMore} text="More Images" />
+                        <StyledButton clickHandler={handleLoadMore} text="More Images" />
                     </Wrapper>
                     <Wrapper>
                         {toTop && <Button clickHandler={backToTop} text="Top" />}

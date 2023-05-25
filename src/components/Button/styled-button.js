@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
+import { Button } from './Button';
 import Background from '../../images/pink-magic-b3.jpg';
 
-const StyledBUtton = styled.button`
+const StyledButton = styled(Button)`
         padding: 12px 20px;
         font-size: 20px;
         font-weight: 500;
@@ -28,4 +29,4 @@ const StyledBUtton = styled.button`
             }
 `;
 
-export { StyledBUtton };
+export { StyledButton };

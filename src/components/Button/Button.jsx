@@ -1,10 +1,9 @@
 import { string, func} from 'prop-types'
 
-import { StyledBUtton } from './styled-button';
-
 const Button = props => {
 
     const {
+        className,
         text,
         type,
         clickHandler,
@@ -12,13 +11,13 @@ const Button = props => {
     
     return (
         
-        <StyledBUtton
-            className="Button"
+        <button
+            className={className}
             type={type}
             onClick={clickHandler}
             aria-label={text}
         >{text}
-        </StyledBUtton>
+        </button>
     
     )
 };
@@ -29,6 +28,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
+    className: string,
     type: string,
     clickHandler: func.isRequired,
     text: string
