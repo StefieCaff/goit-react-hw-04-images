@@ -121,8 +121,7 @@ const ImageGallery = (props) => {
         
         console.log(query, 'after');
         if (query !== '') {
-            // setImages([]);
-            // setPage(1);
+            setImages([]);
             getGallery();
             console.log(query);
             console.log(page);

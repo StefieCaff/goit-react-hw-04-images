@@ -1,6 +1,6 @@
 import PuffLoader from "react-spinners/PuffLoader";
 
-import { func, string } from 'prop-types'
+import { bool, string } from 'prop-types'
 
 const Loader = ({ loading, className }) => {
   
@@ -18,7 +18,7 @@ const Loader = ({ loading, className }) => {
 };
 
 Loader.propTypes = {
-    loading: func.isRequired,
+    loading: bool.isRequired,
     className: string
 };
 
