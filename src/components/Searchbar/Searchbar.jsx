@@ -20,16 +20,13 @@ const Searchbar = ({ onSubmit}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-
         if (query === "") {
             setQuery('');
             Notify.info('Please enter a search query');
             return;
         }
-        
         onSubmit(query);
         setQuery('');
-        //e.target.reset();
     }
     
     return (

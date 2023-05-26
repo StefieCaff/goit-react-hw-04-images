@@ -19,19 +19,14 @@ import { StyledButton } from 'components/Button/styled-button.js';
 import { StyledImageCard } from 'components/ImageGalleryItem/styled-image-gallery-item.js';
 import { StyledList } from './styled-image-gallery.js';
 
-const ImageGallery = (props) => {
-
-    const {
-        className,
-        openModal,
-        query
-    } = props;
+const ImageGallery = (props) => { const { className, openModal, query } = props;
     
     const [page, setPage] = useState(1);
     const [images, setImages] = useState([]);
     const [toTop, setToTop] = useState(false);
     const [status, setStatus] = useState('idle');
     const [loading, setLoading] = useState(false);
+
 
     const handleLoadMore = () => {
         setPage(prev => prev + 1);
@@ -54,12 +49,15 @@ const ImageGallery = (props) => {
                 let imageData = response.data;
                 let imageCount = imageData.hits.length;
                 let imageTotal = imageData.totalHits;
-              
+
                 if (page === 42) {
                     setImages(prev => [...prev, ...imageData.hits.slice(4)]);
                     setStatus('resolved');
                 }
-                else if (Number.isInteger(imageTotal / imageCount) === true && page === (imageTotal / imageCount)) {
+                else if(
+                    Number.isInteger(imageTotal / imageCount) === true &&
+                    page === (imageTotal / imageCount))
+                {
                     setImages(prev => [...prev, ...imageData.hits]);
                     setStatus('resolved');
                     return;
@@ -72,15 +70,19 @@ const ImageGallery = (props) => {
                     setStatus('resolved');
                     setImages([]);
                     setToTop(false);
-                    Notify.failure(`Sorry, ${query} doesn't match any images in the Pixabay database, please try another search.`)
+                    Notify.failure(
+                        `Sorry, ${query} doesn't match any images in the Pixabay database, please try another search.`
+                    );
                     return;
                 }
                 if (imageCount < 12 && page === 1) {
                     setLoading(false);
-                    setImages(imageData.hits)
+                    setImages(prev =>[...prev,...imageData.hits])
                     setStatus('resolved');
                     setToTop(false);
-                    Notify.success(`Woot! Maximum search value found, there are ${imageCount} ${query} images in the Pixabay database.`);
+                    Notify.success(
+                        `Woot! Maximum search value found, there are ${imageCount} ${query} images in the Pixabay database.`
+                    );
                     return;
                 }
                 if (imageCount < 12 && page > 1) {
@@ -88,13 +90,17 @@ const ImageGallery = (props) => {
                     setImages(prev => [...prev, ...imageData.hits]);
                     setStatus('resolved');
                     setToTop(true);
-                    Notify.success(`Woot! Maximum search values found! We have ${imageCount} ${query} images in the Pixabay database.`);
+                    Notify.success(
+                        `Woot! Maximum search values found! We have ${imageCount} ${query} images in the Pixabay database.`
+                    );
                     return;
                 }
                 if (page >= 2 && page <= 41) {
                     setStatus('more');
                     setToTop(true);
-                    Notify.info(`${imageTotal - (imageCount * page)}of ${imageTotal} ${query} images`)
+                    Notify.info(
+                        `${imageTotal - (imageCount * page)}of ${imageTotal} ${query} images`
+                    );
                     return;
                 }
                 if (page === 42) {
@@ -106,24 +112,25 @@ const ImageGallery = (props) => {
                     setStatus('more');
                     setToTop(true);
                     setLoading(true);
-                    Notify.success(`Hooray! We can view ${imageTotal} ${query} images in the Pixabay database.`);
+                    Notify.success(
+                        `Hooray! There are ${imageTotal} ${query} images found in the Pixabay database.`
+                    );
                     return;
                 }
             } catch (e) {
                 console.error('Error fetching images:', e);
-                Notify.failure(`Sorry, there was an error fetching ${query}, Please try again.`);
+                Notify.failure(
+                    `Sorry, there was an error fetching ${query}, Please try again.`);
             }
             finally {
-                console.log('made get request');
                 setLoading(false);
             }
         };
-        
-        console.log(query, 'after');
         if (query !== '') {
-            setImages([]);
+            if(page === 1){
+                setImages([]);
+            }
             getGallery();
-            console.log(query);
             console.log(page);
         }
     },[query, page])
@@ -134,25 +141,19 @@ const ImageGallery = (props) => {
             <StyledSection>
                 <StyledContainer>
                     <StyledList className={className}>
-                        <StyledImageCard
-                            data={images}
-                            openModal={openModal}
-                        />
+                        <StyledImageCard data={images} openModal={openModal} />
                     </StyledList>
                     {loading && <StyledLoader loading={loading} />}
                 </StyledContainer>
             </StyledSection>
-        )
+        );
     }
     if (status === 'resolved') {
         return (
             <StyledSection>
                 <StyledContainer>
                     <StyledList className={className}>
-                        <StyledImageCard
-                            data={images}
-                            openModal={openModal}
-                        />
+                        <StyledImageCard data={images} openModal={openModal}/>
                     </StyledList>
                     {toTop && <Button clickHandler={backToTop} text="To Top"/>}
                 </StyledContainer>
@@ -164,10 +165,7 @@ const ImageGallery = (props) => {
             <StyledSection>
                 <StyledContainer>
                     <StyledList className={className}>
-                        <StyledImageCard
-                            data={images}
-                            openModal={openModal}
-                        />
+                        <StyledImageCard data={images} openModal={openModal}/>
                     </StyledList>
                     <Wrapper>
                         <StyledButton clickHandler={handleLoadMore} text="More Images" />
