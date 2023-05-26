@@ -6,7 +6,7 @@ const StyledInput = styled.input`
     padding: 15px 75px 14px 15px;
     font-size: 18px;
     font-weight: 600;
-    text-transform: capitalize;
+    text-transform: lowercase;
     overflow: hidden;
     background-color: transparent;
     color: var(primary-color);

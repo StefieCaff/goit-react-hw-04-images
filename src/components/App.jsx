@@ -23,7 +23,7 @@ export const App = () => {
   const handleSubmit = (searchQuery) => {
     console.log(searchQuery);
     if (searchQuery === query) {
-      Notify.info("Eeep, just returned that search, enter a new search.");
+      Notify.info(`Eeep, ${query} is on display, please enter a new search.`);
     }
     return setQuery(searchQuery);    
   };
