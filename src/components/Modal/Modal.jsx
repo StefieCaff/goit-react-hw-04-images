@@ -2,6 +2,7 @@ import {string, func} from 'prop-types';
 import { useEffect } from 'react'
 
 import { Button } from 'components/Button/Button';
+import { StyledModal } from './styled-modal';
 
 const Modal = (props) => {
 
@@ -30,12 +31,12 @@ const Modal = (props) => {
     }, [modalClose]);
 
     return (
-        <div className="Overlay" onClick={handleBackdropClose}>
-            <div className="Modal">
+        <StyledModal onClick={handleBackdropClose}>
+            <div>
                 <Button clickHandler={modalClose} text='close' />
                 <img src={largeImageURL} alt={tags} />
             </div>
-        </div>
+        </StyledModal>
     )
 };
 
