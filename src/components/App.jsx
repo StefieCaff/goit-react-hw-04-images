@@ -1,14 +1,19 @@
-/*external imports*/ 
+
+/** All imports will be structured as they are in the App.jsx file
+ * external imports followed by an empty line
+ * 
+ * internal imports followed by an empty line
+ */
+
  import {  useState } from "react";
  import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-/*internal imports*/
-//components
 import { StyledHero } from "./Section/styled-section";
 import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
 import { StyledMessage } from "./Message/styled-message";
+import { Wrapper } from "./Wrapper/Wrapper";
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -36,13 +41,13 @@ export const App = () => {
 
   return (
    
-    <>
+    <Wrapper>
       <h1 className="hidden">Pixabay API image search</h1>
       <StyledHero>
         <Searchbar onSubmit={handleSubmit} />
       </StyledHero>
       <StyledMessage>
-        <span><a href="https://pixabay.com/">Pixabay </a>API</span>
+        <span><a href="https://pixabay.com/">Pixabay</a> API</span>
       </StyledMessage>
       <ImageGallery query={query} openModal={handleOpenModal} />
       {openModal && (
@@ -51,6 +56,6 @@ export const App = () => {
           modalClose={handleModalClose}
         />
       )}
-     </>
+     </Wrapper>
   )
 };
