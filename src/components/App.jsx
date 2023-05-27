@@ -13,7 +13,6 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
 import { StyledMessage } from "./Message/styled-message";
-//import { Wrapper } from "./Wrapper/Wrapper";
 
 export const App = () => {
   const [query, setQuery] = useState('');

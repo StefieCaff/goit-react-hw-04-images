@@ -14,7 +14,6 @@ import { FlexWrapper, RelativeWrapper } from '../Wrapper/Wrapper.jsx'
 
 // components
 import { StyledLoader } from 'components/Loader/styled-loader.js';
-import { Button } from 'components/Button/Button.jsx';
 import { StyledButton, StyledSecondaryButton } from 'components/Button/styled-button.js';
 import { StyledImageCard } from 'components/ImageGalleryItem/styled-image-gallery-item.js';
 import { StyledList } from './styled-image-gallery.js';
