@@ -10,12 +10,12 @@ import { getImages } from 'utils/api/get-images.js';
 // styled components
 import { StyledSection } from 'components/Section/styled-section.js';
 import { StyledContainer } from '../Container/styled-container.js';
-import { Wrapper } from '../Wrapper/Wrapper.jsx'
+import { FlexWrapper, RelativeWrapper } from '../Wrapper/Wrapper.jsx'
 
 // components
 import { StyledLoader } from 'components/Loader/styled-loader.js';
 import { Button } from 'components/Button/Button.jsx';
-import { StyledButton } from 'components/Button/styled-button.js';
+import { StyledButton, StyledSecondaryButton } from 'components/Button/styled-button.js';
 import { StyledImageCard } from 'components/ImageGalleryItem/styled-image-gallery-item.js';
 import { StyledList } from './styled-image-gallery.js';
 
@@ -155,7 +155,7 @@ const ImageGallery = (props) => { const { className, openModal, query } = props;
                     <StyledList className={className}>
                         <StyledImageCard data={images} openModal={openModal}/>
                     </StyledList>
-                    {toTop && <Button clickHandler={backToTop} text="To Top"/>}
+                        {toTop && <StyledSecondaryButton clickHandler={backToTop} text="To Top"/>}
                 </StyledContainer>
             </StyledSection>
         );
@@ -167,12 +167,10 @@ const ImageGallery = (props) => { const { className, openModal, query } = props;
                     <StyledList className={className}>
                         <StyledImageCard data={images} openModal={openModal}/>
                     </StyledList>
-                    <Wrapper>
-                        <StyledButton clickHandler={handleLoadMore} text="More Images" />
-                    </Wrapper>
-                    <Wrapper>
-                        {toTop && <Button clickHandler={backToTop} text="Top" />}
-                    </Wrapper>
+                    <FlexWrapper>
+                        <StyledButton clickHandler={handleLoadMore} text="More Images"></StyledButton>
+                    </FlexWrapper>
+                        {toTop && <StyledSecondaryButton clickHandler={backToTop} text="To Top" />}
                 </StyledContainer>
             </StyledSection>
         );

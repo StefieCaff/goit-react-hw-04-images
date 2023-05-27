@@ -1,16 +1,28 @@
-import { node } from 'prop-types';
+import { node, string } from 'prop-types';
+import styled from 'styled-components';
 
-const Wrapper = ({ children }) => {
+
+const Wrapper = ({ className, children }) => {
     
     return (
-        <div>
+        <div className={className}>
             {children}
         </div>
     );
 };
 
+
+const FlexWrapper = styled(Wrapper)`
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+
+`
+
+
 Wrapper.propTypes = {
+    className: string,
     children: node
 }
 
-export { Wrapper }
+export { FlexWrapper }

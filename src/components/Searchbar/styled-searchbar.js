@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import Magnify from 'images/search.png';
 
-
 const StyledInput = styled.input`
     padding: 15px 75px 14px 15px;
     font-size: 18px;

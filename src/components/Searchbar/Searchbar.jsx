@@ -2,6 +2,7 @@ import { func } from "prop-types";
 import { useState } from "react";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+
 import {
     StyledForm,
     StyledInput
@@ -41,9 +42,7 @@ const Searchbar = ({ onSubmit}) => {
                         placeholder="search"
                         onChange = {handleChange}
                 />
-                <button type="submit" >
-                    <span className="hidden">Search</span>
-                </button>
+                <button type="submit"></button>
             </div>
             </StyledForm>
     )

@@ -13,7 +13,7 @@ const StyledList = styled.ul`
     }
 
      @media(min-width:1024px) {
-        margin: 30px 0px;
+        margin: 20px 0px;
         gap: 20px; 
     }
 `;

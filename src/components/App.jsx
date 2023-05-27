@@ -13,7 +13,7 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from './Modal/Modal';
 import { StyledMessage } from "./Message/styled-message";
-import { Wrapper } from "./Wrapper/Wrapper";
+//import { Wrapper } from "./Wrapper/Wrapper";
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -41,7 +41,7 @@ export const App = () => {
 
   return (
    
-    <Wrapper>
+    <>
       <h1 className="hidden">Pixabay API image search</h1>
       <StyledHero>
         <Searchbar onSubmit={handleSubmit} />
@@ -56,6 +56,6 @@ export const App = () => {
           modalClose={handleModalClose}
         />
       )}
-     </Wrapper>
+     </>
   )
 };
