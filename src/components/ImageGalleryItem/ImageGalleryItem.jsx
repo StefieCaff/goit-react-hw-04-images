@@ -13,7 +13,6 @@ const ImageGalleryItem = (props) => {
             <img className="ImageGalleryItem-image"
                 src={webformatURL}
                 alt={tags}
-                //largeImage={ largeImageURL }
                 onClick={() => openModal(largeImageURL)}
                 loading="lazy"
             />
