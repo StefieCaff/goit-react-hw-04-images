@@ -33,12 +33,12 @@ const StyledSecondaryButton = styled(Button)`
     position: fixed;
     right: -10px;
     bottom: 55px;
-   padding: 23px 9px;
-   font-size: 15px;
-   color: transparent;
-   border: none;
-   background-color: transparent;
-   background-image: url(${Up});
+    padding: 23px 9px;
+    font-size: 15px;
+    color: transparent;
+    border: none;
+    background-color: transparent;
+    background-image: url(${Up});
 `
 
 export { StyledButton, StyledSecondaryButton };
